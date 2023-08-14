@@ -1,3 +1,3 @@
-# challenge_android
+# Blue Life
 
-A new Flutter project.
+Mobile app featuring habit tracking calendar and achievements.
