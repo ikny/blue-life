@@ -13,9 +13,25 @@ class AchievementBar extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(state.title),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(state.title),
+                ),
+                IconButton(
+                  onPressed: (() => showDialog(
+                      context: context,
+                      builder: (context) => Dialog(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(state.description),
+                            ),
+                          ))),
+                  icon: const Icon(Icons.info),
+                )
+              ],
             ),
             LinearProgressIndicator(
               backgroundColor: Theme.of(context).colorScheme.onBackground,

@@ -36,7 +36,9 @@ class HomePage extends StatelessWidget {
           lastDay: calendarState.lastDay,
           onDayLongPressed: (selectedDay, focusedDay) => showDialog(
             context: context,
-            builder: (context) => const DailyDialog(),
+            builder: (context) => DailyDialog(
+              selectedDay: selectedDay,
+            ),
           ),
           onDaySelected: (selectedDay, focusedDay) => showDialog(
               context: context,

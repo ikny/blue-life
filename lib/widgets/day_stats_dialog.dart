@@ -11,10 +11,39 @@ class DayStatsDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var calendarState = context.watch<Calendar>();
+    if (!calendarState.days.containsKey(selectedDay)) {
+      return Dialog(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "${selectedDay.day}.${selectedDay.month}.${selectedDay.year}",
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text("Pro tento den nejsou k dispozici žádná data."),
+            ),
+          ],
+        ),
+      );
+    }
     var today = calendarState.days[selectedDay]!;
+
     return Dialog(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "${selectedDay.day}.${selectedDay.month}.${selectedDay.year}",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text("Spal jsi ${today.hrsSleep} hodin"),
@@ -33,7 +62,7 @@ class DayStatsDialog extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text("Dnes jsi měl ${today.sex} krát sex"),
+            child: Text("Měl jsi ${today.sex} krát sex"),
           ),
         ],
       ),

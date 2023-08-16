@@ -6,7 +6,12 @@ import 'package:provider/provider.dart';
 import '../models/calendar.dart';
 
 class DailyDialog extends StatelessWidget {
-  const DailyDialog({super.key});
+  final DateTime selectedDay;
+
+  const DailyDialog({
+    super.key,
+    required this.selectedDay,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +21,13 @@ class DailyDialog extends StatelessWidget {
     return Dialog(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          //#TODO implement getting the data, then call calendar.addDay(data) and achs += data
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+                "${selectedDay.day}.${selectedDay.month}.${selectedDay.year}", style: Theme.of(context).textTheme.bodyLarge,),
+          ),
           InputRow(
             name: "hrsSleep",
             text: "Kolik hodin jsi spal?",
@@ -47,7 +57,8 @@ class DailyDialog extends StatelessWidget {
               onPressed: () => {
                     dailyDialogState.save(
                         calendarState: calendarState,
-                        achievementsPageState: achievementsPageState),
+                        achievementsPageState: achievementsPageState,
+                        selectedDay: selectedDay),
                     Navigator.pop(context)
                   },
               child: const Text("Uložit"))
