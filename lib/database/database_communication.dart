@@ -26,7 +26,7 @@ class DatabaseCommunication {
         "title": "Jdi si lehnout!",
         "description": """Zobrazuje prospané hodiny.
         Zatím žádné milníky.""",
-        "current_value": 0.0,
+        "current_value": 27.5,
         "max_value": 28 * 6 * 8.5
       });
       await db.insert("achievements", {
@@ -34,7 +34,7 @@ class DatabaseCommunication {
         "title": "Měl bys plavat...",
         "description": """Zobrazuje hodiny strávené pohybem.
         Milníky: 20, 50, 80, 120, 150, 200, 250, 300, 350""",
-        "current_value": 0.0,
+        "current_value": 5.7,
         "max_value": 350
       });
       await db.insert("achievements", {
@@ -43,7 +43,7 @@ class DatabaseCommunication {
         "description":
             """Zobrazuje počet dní s méně než jednou hodinou prokrastinace.
         Milníky: 10, 15, 30, 50, 70, 90, 110, 140, 160""",
-        "current_value": 0.0,
+        "current_value": 2,
         "max_value": 160
       });
       await db.insert("achievements", {
@@ -51,7 +51,7 @@ class DatabaseCommunication {
         "title": "porno",
         "description": """Zobrazuje počet pornaprostých dní.
         Milníky: 10, 20, 40, 60, 80, 100, 120, 140, 160""",
-        "current_value": 0.0,
+        "current_value": 2,
         "max_value": 160
       });
       await db.insert("achievements", {
@@ -59,7 +59,7 @@ class DatabaseCommunication {
         "title": "sex += 1",
         "description": """Zobrazuje počet aktů.
         Milníky: 10, 25, 40, 55, 70""",
-        "current_value": 0.0,
+        "current_value": 1,
         "max_value": 70
       });
 

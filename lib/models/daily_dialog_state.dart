@@ -29,7 +29,7 @@ class DailyDialogState extends ChangeNotifier {
       var day = calendarState.days[selectedDay]!;
       achievementsPageState.sleep.currentValue -= day.hrsSleep;
       achievementsPageState.movement.currentValue -= day.hrsMovement;
-      if (day.hrsProcrastination < 2) {
+      if (day.hrsProcrastination < 1) {
         achievementsPageState.procrastination.currentValue -= 1;
       }
       if (day.porn == false) {

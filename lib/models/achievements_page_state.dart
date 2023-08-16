@@ -25,7 +25,7 @@ class AchievementsPageState extends ChangeNotifier {
     //hardoced af, gonna fix that later #forupdate
     sleep.currentValue += values["hrs_sleep"];
     movement.currentValue += values["hrs_movement"];
-    if (values["hrs_procrastination"] < 2) {
+    if (values["hrs_procrastination"] < 1) {
       procrastination.currentValue += 1;
     }
     if (values["porn"] == 0) {
